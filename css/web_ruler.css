@@ -1,0 +1,141 @@
+.rule-h, .rule-v {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 9999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rule-h {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  height: 16px;
+  width: 100%;
+}
+
+.rule-v {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  width: 16px;
+  height: 100%;
+}
+
+.rule-h-sm, .rule-h-md, .rule-h-lg,
+.rule-v-sm, .rule-v-md, .rule-v-lg {
+  display: inline-block;
+  position: absolute;
+}
+
+.rule-h-sm, .rule-h-md, .rule-h-lg {
+  bottom: 0;
+  width: 1px;
+  background-color: #000;
+}
+
+.rule-h-sm {
+  left: 5px;
+  height: 3px;
+}
+
+.rule-h-md {
+  left: 10px;
+  height: 5px;
+}
+
+.rule-h-lg {
+  left: 0;
+  height: 16px;
+}
+
+.rule-v-sm, .rule-v-md, .rule-v-lg {
+  right: 0;
+  height: 1px;
+  background-color: #000;
+}
+
+.rule-v-sm {
+  top: 5px;
+  width: 3px;
+}
+
+.rule-v-md {
+  top: 10px;
+  width: 5px;
+}
+
+.rule-v-lg {
+  top: 0;
+  width: 16px;
+}
+
+.rule-h-num, .rule-v-num {
+  position: absolute;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  cursor: default;
+  text-align: left;
+}
+
+.rule-h-num {
+  width: 48px;
+  padding-left: 2px;
+  top: -1px;
+  line-height: 15px;
+}
+
+.rule-v-num {
+  height: 48px;
+  width: 8px;
+  padding-top: 2px;
+  word-wrap: break-word;
+  left: 2px;
+  line-height: 12px;
+}
+
+.web-rule-line-h, .web-rule-line-v {
+  position: fixed;
+}
+.web-rule-line-h:after, .web-rule-line-v:after {
+  content: '';
+  background-color: #4AFFFF;
+  position: absolute;
+}
+
+.web-rule-line-h {
+  width: 100%;
+  height: 3px;
+  cursor: n-resize;
+}
+.web-rule-line-h:after {
+  width: 100%;
+  height: 1px;
+  top: 1px;
+  left: 0px;
+}
+
+.web-rule-line-v {
+  width: 3px;
+  height: 100%;
+  cursor: w-resize;
+}
+.web-rule-line-v:after {
+  height: 100%;
+  width: 1px;
+  left: 1px;
+  top: 0px;
+}
+
+#rule-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+}
+
+/*# sourceMappingURL=web_ruler.css.map */

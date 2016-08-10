@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 250px;
+      font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    }
+    ul li {
+      list-style: none;
+      padding: 2px 0;
+    }
+    ul {
+      padding-left: 0;
+    }
+    code {
+      padding: 1px 4px;
+      margin: 0 2px;
+      font-size: 90%;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px;
+    }
+    .switch {
+      /*display: inline-block;*/
+      width: 100px;
+      height: 15px;
+      border: 1px solid #000;
+      border-radius: 2px;
+      position: relative;
+      margin: 2px 0 0 2px;
+      float: left;
+    }
+    .switch-outer {
+      overflow: hidden;
+      /*zoom: 1;*/
+    }
+    .switch-tip {
+      float: left;
+      margin: 2px 0 0 2px;
+    }
+    .off, .on, .top {
+      display: inline-block;
+      width: 40px;
+      height: 15px;
+      border-radius: 2px;
+    }
+    .off, .on {
+      float: left;
+      line-height: 15px;
+      padding: 0 5px;
+    }
+    .off {
+      background-color: red;
+    }
+    .on {
+      background-color: green;
+      text-align: right;
+    }
+    .top {
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 70px;
+      height: 15px;
+      background-color: #eee;
+      cursor: pointer;
+      -webkit-transition: left .5s;
+    }
+  </style>
+</head>
+<body>
+  <div class="switch-outer">
+    <div class="switch">
+      <em class="off">off</em>
+      <em class="on">on</em>
+      <em class="top" id="top"></em>
+    </div>
+    <span class="switch-tip"><code>关闭需刷新界面生效</code></span>
+  </div>
+  <ul>
+    <li><code> ; </code>显示或者隐藏参考线</li>
+    <li><code> r </code>显示或者隐藏标尺</li>
+    <li><code> \ </code>添加参考线</li>
+    <li><code> c </code>删除全部参考线</li>
+    <li><code>双击</code>或<code>拖动参考线到标尺中</code>删除该参考线</li>
+  </ul>
+  <script type="text/javascript" src="../js/function.js"></script>
+  <script type="text/javascript" src="../js/popup.js"></script>
+</body>
+</html>

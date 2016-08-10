@@ -1,0 +1,162 @@
+$rule-index: 9999; // 刻度尺 z-index
+$rule-bg-color: #fff; // 刻度尺背景颜色
+$rule-graduate-color: #000; // 刻度颜色
+$rule-border-width: 1px; // 刻度尺边框大小
+$rule-border: $rule-border-width solid #000;
+$rule-width: 18px; // 刻度尺宽度
+// 横轴方向相应刻度高度
+$rule-sm-height: 3px;
+$rule-md-height: 5px;
+$rule-lg-height: 16px;
+
+$rule-graduate-width: 1px;
+$web-rule-line-color: #4AFFFF;
+
+@mixin user-select-none {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rule-h, .rule-v {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $rule-bg-color;
+  z-index: $rule-index;
+  @include user-select-none;
+}
+
+.rule-h {
+  border: {
+    top: $rule-border;
+    bottom: $rule-border;
+  }
+  height: $rule-width - 2 * $rule-border-width;
+  width: 100%;
+}
+
+.rule-v {
+  border: {
+    left: $rule-border;
+    right: $rule-border;
+  }
+  width: $rule-width - 2 * $rule-border-width;
+  height: 100%;
+}
+
+
+.rule-h-sm, .rule-h-md, .rule-h-lg,
+.rule-v-sm, .rule-v-md, .rule-v-lg {
+  display: inline-block;
+  position: absolute;
+}
+
+.rule-h-sm, .rule-h-md, .rule-h-lg {
+  bottom: 0;
+  width: $rule-graduate-width;
+  background-color: $rule-graduate-color;
+}
+
+.rule-h-sm {
+  left: 5px;
+  height: $rule-sm-height;
+}
+
+.rule-h-md {
+  left: 10px;
+  height: $rule-md-height;
+}
+
+.rule-h-lg {
+  left: 0;
+  height: $rule-lg-height;
+}
+
+.rule-v-sm, .rule-v-md, .rule-v-lg {
+  right: 0;
+  height: $rule-graduate-width;
+  background-color: $rule-graduate-color;
+}
+
+.rule-v-sm {
+  top: 5px;
+  width: $rule-sm-height;
+}
+
+.rule-v-md {
+  top: 10px;
+  width: $rule-md-height;
+}
+
+.rule-v-lg {
+  top: 0;
+  width: $rule-lg-height;
+}
+
+.rule-h-num, .rule-v-num {
+  position: absolute;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  cursor: default;
+  text-align: left;
+}
+
+.rule-h-num {
+  width: 50 - $rule-graduate-width * 2;
+  padding-left: 2px;
+  top: -1px;
+  line-height: 15px;
+}
+
+.rule-v-num {
+  height: 50 - $rule-graduate-width * 2;
+  width: 8px;
+  padding-top: 2px;
+  word-wrap: break-word;
+  left: 2px;
+  line-height: 12px;
+}
+
+.web-rule-line-h, .web-rule-line-v {
+  position: fixed;
+  &:after {
+    content: '';
+    background-color: $web-rule-line-color;
+    position: absolute;
+  }
+}
+
+.web-rule-line-h {
+  width: 100%;
+  height: 3px;
+  cursor: n-resize;
+  &:after {
+    width: 100%;
+    height: 1px;
+    top: 1px;
+    left: 0px;
+  }
+}
+
+.web-rule-line-v {
+  width: 3px;
+  height: 100%;
+  cursor: w-resize;
+  &:after {
+    height: 100%;
+    width: 1px;
+    left: 1px;
+    top: 0px;
+  }
+}
+
+#rule-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $rule-index - 1;
+}
