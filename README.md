@@ -15,4 +15,5 @@ web-ruler 是一个 chrome 网页参考线插件。
 
 #### 安装方法
 1. 在 chrome 浏览器地址栏中输入 [chrome://extensions/](chrome://extensions/) 进入 chrome 扩展程序界面。
-2. 点击 "加载已压缩的扩展程序", 选择该 web-ruler 的根目录即可。
+2. 开启 "开发者模式"。 
+3. 点击 "加载已压缩的扩展程序", 选择该 web-ruler 的根目录即可。
